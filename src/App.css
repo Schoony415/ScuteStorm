@@ -1,5 +1,9 @@
 .App {
   text-align: center;
+  min-width: 100%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-logo {
@@ -35,4 +39,43 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+.Card {
+  width: 75%;
+  height: 75%;
+  border: black 5px solid;
+  border-radius: 25px;
+
+  padding: 1rem 2rem 0rem 2rem;
+
+  background: radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #99b19b 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
+  radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #99b19b 10px, rgba(96, 16, 48, 0) 11px),
+  #506d4e;
+  background-size: 20px 20px;
+}
+
+hr {
+  height: 3px;
+  color: black;
+  background-color: #2d714c;
+  width: 75%;
+}
+
+.BodyText {
+  border: #2d714c 3px solid;
+  background: rgba(255,255,255,.5) ;
+  box-shadow: -4px  0px rgba(0,0,0,.5);
+}
+
+h1 {
+  text-align: left;
+
+  border: #2d714c 3px solid;
+  margin: 0;
+  Padding: 3px;
+
+  background: #cad4cc;
+  box-shadow: -4px  0px rgba(0,0,0,.5);
 }
