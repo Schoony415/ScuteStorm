@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import NumBox from './NumBox'
+import { calculateScutesToAdd } from './calculateScutes';
 
 import './App.css';
 
@@ -9,18 +10,27 @@ function App() {
   const [buggers, setBuggers] = useState(0)
 
   const [currentLands, setCurrentLands] = useState(3);
+  const [landsHittingTheField, setLandsHittingTheField] = useState(0)
 
   let adjustInitialScutes = (newValue:number)=>{
     // todo negative check
     setInitialScutes(newValue)
   }
 
-  let calculateScutes = () => {
-    if(currentLands >= 6){
-      setExtraScutes(initialScutes)
-    } else {
-      setBuggers(buggers+1)
-    }
+  let calculateHandler = () => {
+
+    const newTotalLands = currentLands + landsHittingTheField;
+    let scutes = initialScutes+extraScutes
+
+    // console.log("lands:"+currentLands+":"+landsHittingTheField+"="+newTotalLands+";")
+
+    let calculatedScutes = calculateScutesToAdd(scutes, landsHittingTheField, newTotalLands)
+
+    setExtraScutes( extraScutes + calculatedScutes.scutesToAdd)
+    setBuggers(buggers + calculatedScutes.buggersToAdd)
+
+    setCurrentLands(newTotalLands)
+    setLandsHittingTheField(0)
   }
 
   let nextTurn = () => {
@@ -36,6 +46,10 @@ function App() {
     setCurrentLands(newValue)
   }
 
+  let adjustLandsHittingTheField = (newValue:number) => {
+    // todo negative check less important here?
+    setLandsHittingTheField(newValue)
+  }
 
 
   return (
@@ -50,9 +64,11 @@ function App() {
       <div>current land on field</div>
       <NumBox value={currentLands} onChange={adjustCurrentLands}/>
       <div>is land on field 6 or over? disable above box</div>
+      <div>todo: if the lands come from one spell then they don't cascade the same</div>
       <div>how many land are being added?</div>
+      <NumBox value={landsHittingTheField} onChange={adjustLandsHittingTheField}/>
       <div>go button</div>
-      <input type='button' value='CALCULATE!' onClick={calculateScutes}/>
+      <input type='button' value='CALCULATE!' onClick={calculateHandler}/>
       <hr/>
       <div>current scutes</div>
       <NumBox value={initialScutes} onChange={adjustInitialScutes}/>
