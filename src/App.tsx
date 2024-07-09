@@ -4,23 +4,39 @@ import NumBox from './NumBox'
 import './App.css';
 
 function App() {
-  const [initialScutes, setInitialScutes] = useState(0);
+  const [initialScutes, setInitialScutes] = useState(1);
   const [extraScutes, setExtraScutes] = useState(0);
   const [buggers, setBuggers] = useState(0)
 
-  let adjustInitialValue = (newValue:number)=>{
+  const [currentLands, setCurrentLands] = useState(3);
+
+  let adjustInitialScutes = (newValue:number)=>{
     // todo negative check
     setInitialScutes(newValue)
   }
 
   let calculateScutes = () => {
-    setExtraScutes(initialScutes)
+    if(currentLands >= 6){
+      setExtraScutes(initialScutes)
+    } else {
+      setBuggers(buggers+1)
+    }
   }
 
   let nextTurn = () => {
     setInitialScutes(initialScutes+extraScutes);
     setExtraScutes(0)
   }
+
+
+
+
+  let adjustCurrentLands = (newValue:number) => {
+    // todo negative check
+    setCurrentLands(newValue)
+  }
+
+
 
   return (
     <div className="App">
@@ -32,13 +48,14 @@ function App() {
       
       <hr/>
       <div>current land on field</div>
+      <NumBox value={currentLands} onChange={adjustCurrentLands}/>
       <div>is land on field 6 or over? disable above box</div>
       <div>how many land are being added?</div>
       <div>go button</div>
       <input type='button' value='CALCULATE!' onClick={calculateScutes}/>
       <hr/>
       <div>current scutes</div>
-      <NumBox value={initialScutes} onChange={adjustInitialValue}/>
+      <NumBox value={initialScutes} onChange={adjustInitialScutes}/>
       <div>new scutes</div>
       <NumBox value={extraScutes} readonly/>
       <div>how many buggies if under 6 land</div>
@@ -47,11 +64,11 @@ function App() {
       <hr/>
       <div>roll to next turn</div>
       <input type='button' value='Next Turn' onClick={nextTurn}/>
-      <div>find a way to kill some</div>
+      <div>todo: find a way to kill some</div>
 
 
 
-
+      <hr/>
       <p>Disclaimer: I own nothing of WOTC or MTG witch are big things, please don't take me down.</p>
     </div>
   );
