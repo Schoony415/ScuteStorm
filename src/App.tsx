@@ -1,24 +1,58 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, {useState} from 'react';
+import NumBox from './NumBox'
+
 import './App.css';
 
 function App() {
+  const [initialScutes, setInitialScutes] = useState(0);
+  const [extraScutes, setExtraScutes] = useState(0);
+  const [buggers, setBuggers] = useState(0)
+
+  let adjustInitialValue = (newValue:number)=>{
+    // todo negative check
+    setInitialScutes(newValue)
+  }
+
+  let calculateScutes = () => {
+    setExtraScutes(initialScutes)
+  }
+
+  let nextTurn = () => {
+    setInitialScutes(initialScutes+extraScutes);
+    setExtraScutes(0)
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+
+      <h1>Scutes go here</h1>
+
+      <p>A quick app to help calculate the Scutes that would be made from dropping land in MTG.</p>
+      <p>Landfall — Whenever a land enters the battlefield under your control, create a 1/1 green Insect creature token. If you control six or more lands, create a token that's a copy of Scute Swarm instead.</p>
+      
+      <hr/>
+      <div>current land on field</div>
+      <div>is land on field 6 or over? disable above box</div>
+      <div>how many land are being added?</div>
+      <div>go button</div>
+      <input type='button' value='CALCULATE!' onClick={calculateScutes}/>
+      <hr/>
+      <div>current scutes</div>
+      <NumBox value={initialScutes} onChange={adjustInitialValue}/>
+      <div>new scutes</div>
+      <NumBox value={extraScutes} readonly/>
+      <div>how many buggies if under 6 land</div>
+      <NumBox value={buggers} readonly/>
+
+      <hr/>
+      <div>roll to next turn</div>
+      <input type='button' value='Next Turn' onClick={nextTurn}/>
+      <div>find a way to kill some</div>
+
+
+
+
+      <p>Disclaimer: I own nothing of WOTC or MTG witch are big things, please don't take me down.</p>
     </div>
   );
 }
