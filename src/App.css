@@ -45,10 +45,12 @@
 .Card {
   width: 75%;
   height: 75%;
-  border: black 5px solid;
+  border: black solid;
+  border-width: .5rem .5rem 2rem .5rem ;
   border-radius: 25px;
 
   padding: 1rem 2rem 0rem 2rem;
+  margin: auto;
 
   background: radial-gradient(circle at 0% 50%, rgba(96, 16, 48, 0) 9px, #99b19b 10px, rgba(96, 16, 48, 0) 11px) 0px 10px,
   radial-gradient(at 100% 100%,      rgba(96, 16, 48, 0) 9px, #99b19b 10px, rgba(96, 16, 48, 0) 11px),
@@ -78,4 +80,20 @@ h1 {
 
   background: #cad4cc;
   box-shadow: -4px  0px rgba(0,0,0,.5);
+}
+
+.CardPicture {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+
+}
+
+.ImageFrame {
+  border: #2d714c 3px solid;
+  height: 15rem;
+  /* width: 75%; */
+  box-shadow: -4px  0px rgba(0,0,0,.5);
+
 }

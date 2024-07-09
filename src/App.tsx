@@ -3,6 +3,7 @@ import NumBox from './NumBox'
 import { calculateScutesToAdd } from './calculateScutes';
 
 import './App.css';
+import TreeIcon from './assets/tree.svg';
 
 function App() {
   const [initialScutes, setInitialScutes] = useState(1);
@@ -56,9 +57,13 @@ function App() {
     <div className="App">
       <div className="Card">
 
+      <h1>Scutes were here</h1>
 
+      <div className='ImageFrame'>
+        <img className='CardPicture' src={require('./assets/paulo-ziemer-oV3zTK7vuP0-unsplash.jpg')}/>
+      </div>
 
-      <h1>Scutes go here</h1>
+      <h1>Tool - Coded</h1>
 
       <div className="BodyText">
         <p>A quick app to help calculate the Scutes that would be made from dropping land in MTG.</p>
@@ -93,7 +98,8 @@ function App() {
 
       </div>
       <p>Disclaimer: I own nothing of WOTC or MTG which are big things, please don't take me down.</p>
-
+      <p>beetle picture is public domain: Photo by <a href="https://unsplash.com/@ziemer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulo Ziemer</a> on <a href="https://unsplash.com/photos/close-up-photo-of-green-oil-bettle-oV3zTK7vuP0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
+      </p>
     </div>
   );
 }
