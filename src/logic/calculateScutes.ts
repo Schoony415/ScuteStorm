@@ -1,11 +1,11 @@
 
 
 export type calcScutesRetType = {scutesToAdd:number, buggersToAdd:number};
-export type calculateScutesType = (scutesToMathWith:number,  landsETB:number, totalLands:number, multiply?:number)=>calcScutesRetType;
+export type calculateScutesType = (scutesToMathWith:number,  landsETB:number, totalLands:number, modifiers?:{multiplier?:number,addition?:number})=>calcScutesRetType;
 
 export let calculateScutesToAdd:calculateScutesType;
 
-calculateScutesToAdd=(scutesToMathWith, landsETB, totalLands, multiply)=>{
+calculateScutesToAdd=(scutesToMathWith, landsETB, totalLands, modifiers)=>{
 
     let ret:calcScutesRetType = {scutesToAdd: 0, buggersToAdd: 0};
 
@@ -17,9 +17,9 @@ calculateScutesToAdd=(scutesToMathWith, landsETB, totalLands, multiply)=>{
         }
     }
 
-    if(multiply&& multiply>1){
-        ret.scutesToAdd = ret.scutesToAdd * multiply;
-        ret.buggersToAdd = ret.buggersToAdd * multiply;
+    if(modifiers?.multiplier && modifiers.multiplier>1){
+        ret.scutesToAdd = ret.scutesToAdd * modifiers.multiplier;
+        ret.buggersToAdd = ret.buggersToAdd * modifiers.multiplier;
     }
 
     return(ret)
