@@ -13,8 +13,8 @@ function App() {
   const [currentLands, setCurrentLands] = useState(3);
   const [landsHittingTheField, setLandsHittingTheField] = useState(0)
 
-  let adjustInitialScutes = (newValue:number)=>{
-    // todo negative check
+  let initialScutesHandler = (newValue:number)=>{
+    if(newValue < 0){return}
     setInitialScutes(newValue)
   }
 
@@ -34,7 +34,7 @@ function App() {
     setLandsHittingTheField(0)
   }
 
-  let nextTurn = () => {
+  let nextTurnHandler = () => {
     setInitialScutes(initialScutes+extraScutes);
     setExtraScutes(0)
   }
@@ -42,13 +42,13 @@ function App() {
 
 
 
-  let adjustCurrentLands = (newValue:number) => {
-    // todo negative check
+  let currentLandsHandler = (newValue:number) => {
+    if(newValue < 0){return}
     setCurrentLands(newValue)
   }
 
-  let adjustLandsHittingTheField = (newValue:number) => {
-    // todo negative check less important here?
+  let landsHittingTheFieldHandler = (newValue:number) => {
+    if(newValue < 0){return}
     setLandsHittingTheField(newValue)
   }
 
@@ -72,17 +72,17 @@ function App() {
         <hr/>
 
         <div>current land on field</div>
-        <NumBox value={currentLands} onChange={adjustCurrentLands}/>
+        <NumBox value={currentLands} onChange={currentLandsHandler}/>
         {/* <div>is land on field 6 or over? disable above box</div> */}
         <div>how many land are being added?</div>
-        <NumBox value={landsHittingTheField} onChange={adjustLandsHittingTheField}/>
+        <NumBox value={landsHittingTheField} onChange={landsHittingTheFieldHandler}/>
         <div>go button</div>
         <input type='button' value='CALCULATE!' onClick={calculateHandler}/>
 
         <hr/>
 
         <div>current scutes</div>
-        <NumBox value={initialScutes} onChange={adjustInitialScutes}/>
+        <NumBox value={initialScutes} onChange={initialScutesHandler}/>
         <div>new scutes</div>
         <NumBox value={extraScutes} readonly/>
         <div>1/1 Buggies</div>
@@ -91,7 +91,7 @@ function App() {
         <hr/>
 
         <div>Roll new scutes into current scutes. This represents "end of turn" or similiar that will combine the states of the cards.</div>
-        <input type='button' value='Next Turn' onClick={nextTurn}/>
+        <input type='button' value='Next Turn' onClick={nextTurnHandler}/>
         {/* <div>todo: find a way to kill some</div> */}
       </div>
 
