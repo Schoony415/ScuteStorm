@@ -1,0 +1,19 @@
+
+.Circle{
+    cursor: pointer;
+  
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+  
+    width: 2rem;
+    height: 2rem;
+
+    margin: 0;
+    padding: 0 2px;
+  
+    border: lightgray 1px solid;
+    border-radius: 50%;
+    box-shadow: 0px 2px black;
+    background-color: lightgray;
+  }

@@ -1,7 +1,15 @@
 import React from 'react'
+import Circle from './Circle'
 
 import './NumBox.css'
-export default function NumBox({value, onChange, readonly}:{value:number, onChange?:(value:number)=>void, readonly?:boolean}){
+
+type NumBoxType = {
+    value: number
+    onChange?: (value: number) => void
+    readonly?: boolean
+}
+
+export default function NumBox({value, onChange, readonly}:NumBoxType){
     return (<>
         <input type="number"
         value={value} 
@@ -11,10 +19,9 @@ export default function NumBox({value, onChange, readonly}:{value:number, onChan
         readOnly={readonly}
         />
         {!readonly&&(<>
-            <span onClick={()=>onChange&&onChange(value+1)}>&uarr;</span>
-            <span onClick={()=>onChange&&onChange(value-1)}>&darr;</span>
+            &nbsp;<Circle onClick={()=>onChange&&onChange(value+1)}>&uarr;</Circle>
+            &nbsp;<Circle onClick={()=>onChange&&onChange(value-1)}>&darr;</Circle>
 
-            </>
-        )}
+        </>)}
     </>)
 }
