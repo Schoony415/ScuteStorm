@@ -85,7 +85,7 @@ function App() {
         <NumBox value={initialScutes} onChange={adjustInitialScutes}/>
         <div>new scutes</div>
         <NumBox value={extraScutes} readonly/>
-        <div>how many buggies if under 6 land</div>
+        <div>1/1 Buggies</div>
         <NumBox value={buggers} readonly/>
 
         <hr/>

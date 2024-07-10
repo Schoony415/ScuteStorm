@@ -91,7 +91,7 @@ h1, .BodyText, .ImageFrame {
 /* .BoxShadow  */
 h1, .BodyText, .ImageFrame {
   box-shadow: -4px 0px rgba(0,0,0,.5),
-  4px 0px rgba(255,255,255,.5);
+  4px 0px rgba(255,255,255,.25);
 }
 
 h1 {
