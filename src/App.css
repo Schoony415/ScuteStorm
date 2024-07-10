@@ -82,6 +82,10 @@
   
 }
 
+.LineEnd {
+  align-self: end;
+  margin-left: auto;
+}
 
 /* .Border */
 h1, .BodyText, .ImageFrame {
@@ -105,6 +109,8 @@ h1 {
 
   outline: black .5px solid;
   outline-offset: -3px;
+
+  display: flex;
 }
 
 .BodyText {

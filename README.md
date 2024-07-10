@@ -12,13 +12,13 @@ Please reach out if there are any inaccuracies in the numbers.
 - looks like a mtg card
 - make buttons a little nicer
 - disallow negative numbers
+- add svg icons
 
 ## todo list:
 
 - subtract scutes and bugs
 - add multipliers that other cards might cause
 - make number boxs nicer
-- add svg icons
 
 ## hosted
 

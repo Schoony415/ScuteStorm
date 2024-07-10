@@ -1,9 +1,11 @@
 import React, {useState} from 'react';
 import NumBox from './components/NumBox'
 import { calculateScutesToAdd } from './logic/calculateScutes';
+import Circle from './components/Circle';
 
 import './App.css';
 import TreeIcon from './assets/tree.svg';
+import JIcon from './assets/J.svg'
 
 function App() {
   const [initialScutes, setInitialScutes] = useState(1);
@@ -57,13 +59,13 @@ function App() {
     <div className="App">
       <div className="Card">
 
-      <h1>Scutes were here</h1>
+      <h1>Scutes were here <Circle className='LineEnd'><img style={{height:'2rem', width:'2rem'}} src={TreeIcon}/></Circle> </h1>
 
       <div className='ImageFrame'>
         <img className='CardPicture' src={require('./assets/paulo-ziemer-oV3zTK7vuP0-unsplash.jpg')}/>
       </div>
 
-      <h1>Tool - Coded</h1>
+      <h1>Tool - Coded <img className='LineEnd' style={{height:'2rem', width:'2rem'}} src={JIcon}/></h1>
 
       <div className="BodyText">
         <p>A quick app to help calculate the Scutes that would be made from dropping land in MTG.</p>
