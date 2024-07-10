@@ -15,11 +15,34 @@ function App() {
   const [currentLands, setCurrentLands] = useState(3);
   const [landsHittingTheField, setLandsHittingTheField] = useState(0)
 
+  // -----
+  let currentLandsHandler = (newValue:number) => {
+    if(newValue < 0){return}
+    setCurrentLands(newValue)
+  }
+
+  let landsHittingTheFieldHandler = (newValue:number) => {
+    if(newValue < 0){return}
+    setLandsHittingTheField(newValue)
+  }
+
+  // -----
   let initialScutesHandler = (newValue:number)=>{
     if(newValue < 0){return}
     setInitialScutes(newValue)
   }
 
+  let extraScutesHandler = (newValue:number)=>{
+    if(newValue < 0){return}
+    setExtraScutes(newValue)
+  }
+
+  let buggersHandler = (newValue:number)=>{
+    if(newValue < 0){return}
+    setBuggers(newValue)
+  }
+
+  // -----
   let calculateHandler = () => {
 
     const newTotalLands = currentLands + landsHittingTheField;
@@ -41,20 +64,7 @@ function App() {
     setExtraScutes(0)
   }
 
-
-
-
-  let currentLandsHandler = (newValue:number) => {
-    if(newValue < 0){return}
-    setCurrentLands(newValue)
-  }
-
-  let landsHittingTheFieldHandler = (newValue:number) => {
-    if(newValue < 0){return}
-    setLandsHittingTheField(newValue)
-  }
-
-
+  // -----
   return (
     <div className="App">
       <div className="Card">
@@ -86,9 +96,9 @@ function App() {
         <div>current scutes</div>
         <NumBox value={initialScutes} onChange={initialScutesHandler}/>
         <div>new scutes</div>
-        <NumBox value={extraScutes} readonly/>
+        <NumBox value={extraScutes} onChange={extraScutesHandler}/>
         <div>1/1 Buggies</div>
-        <NumBox value={buggers} readonly/>
+        <NumBox value={buggers} onChange={buggersHandler}/>
 
         <hr/>
 

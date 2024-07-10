@@ -13,10 +13,10 @@ Please reach out if there are any inaccuracies in the numbers.
 - make buttons a little nicer
 - disallow negative numbers
 - add svg icons
+- subtract scutes and bugs
 
 ## todo list:
 
-- subtract scutes and bugs
 - add multipliers that other cards might cause
 - make number boxs nicer
 
