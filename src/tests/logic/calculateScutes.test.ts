@@ -46,6 +46,32 @@ describe("pre-6 land",()=>{
         expect(buggersToAdd).toEqual(25)
     })
 
+    describe('multipliers',()=>{
+        test('1 scutes; +1 land; 3 land; double multiplier',()=>{
+            let {scutesToAdd, buggersToAdd}:calcScutesRetType = calculateScutesToAdd(1,1,3,2);
+            expect(scutesToAdd).toEqual(0)
+            expect(buggersToAdd).toEqual(2)
+        })
+
+        test('2 scutes; +1 land; 3 land; double multiplier',()=>{
+            let {scutesToAdd, buggersToAdd}:calcScutesRetType = calculateScutesToAdd(2,1,3,2);
+            expect(scutesToAdd).toEqual(0)
+            expect(buggersToAdd).toEqual(4)
+        })
+
+        test('1 scutes; +1 land; 3 land; triple multiplier',()=>{
+            let {scutesToAdd, buggersToAdd}:calcScutesRetType = calculateScutesToAdd(1,1,3,3);
+            expect(scutesToAdd).toEqual(0)
+            expect(buggersToAdd).toEqual(3)
+        })
+
+        test('1 scutes; +2 land; 3 land; triple multiplier',()=>{
+            let {scutesToAdd, buggersToAdd}:calcScutesRetType = calculateScutesToAdd(1,2,3,3);
+            expect(scutesToAdd).toEqual(0)
+            expect(buggersToAdd).toEqual(6)
+        })
+
+    })
 })
 describe("post-6 land",()=>{
 
@@ -77,6 +103,26 @@ describe("post-6 land",()=>{
         let {scutesToAdd, buggersToAdd}:calcScutesRetType = calculateScutesToAdd(2,10,15);
         expect(scutesToAdd).toEqual(20)
         expect(buggersToAdd).toEqual(0)
+    })
+
+    describe('multipliers',()=>{
+        test('1 scutes; +1 land; 6 land; double multiplier',()=>{
+            let {scutesToAdd, buggersToAdd}:calcScutesRetType = calculateScutesToAdd(1,1,6,2);
+            expect(scutesToAdd).toEqual(2)
+            expect(buggersToAdd).toEqual(0)
+        })
+
+        test('1 scutes; +2 land; 6 land; double multiplier',()=>{
+            let {scutesToAdd, buggersToAdd}:calcScutesRetType = calculateScutesToAdd(1,2,6,2);
+            expect(scutesToAdd).toEqual(4)
+            expect(buggersToAdd).toEqual(0)
+        })
+
+        test('2 scutes; +10 land; 6 land; triple multiplier',()=>{
+            let {scutesToAdd, buggersToAdd}:calcScutesRetType = calculateScutesToAdd(2,10,6,3);
+            expect(scutesToAdd).toEqual(60)
+            expect(buggersToAdd).toEqual(0)
+        })
     })
 
 })
