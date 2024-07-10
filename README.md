@@ -16,9 +16,12 @@ Please reach out if there are any inaccuracies in the numbers.
 - subtract scutes and bugs
 - +10 / -10
 
-## todo list:
+## working:
 
 - add multipliers that other cards might cause
+
+## todo list:
+
 - make number boxs nicer
 
 ## hosted
