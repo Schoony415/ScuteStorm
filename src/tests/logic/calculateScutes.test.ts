@@ -1,4 +1,4 @@
-import { calculateScutesToAdd,calcScutesRetType } from "./calculateScutes"
+import { calculateScutesToAdd,calcScutesRetType } from "../../logic/calculateScutes"
 
 //calculateScutes=(scutesToMathWith, landsETB, totalLands)=>{
 describe("We hate the Scutes",()=>{

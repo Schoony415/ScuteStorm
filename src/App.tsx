@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import NumBox from './NumBox'
-import { calculateScutesToAdd } from './calculateScutes';
+import NumBox from './components/NumBox'
+import { calculateScutesToAdd } from './logic/calculateScutes';
 
 import './App.css';
 import TreeIcon from './assets/tree.svg';
