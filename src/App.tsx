@@ -68,9 +68,9 @@ function App() {
       <div className="BodyText">
         <p>A quick app to help calculate the Scutes that would be made from dropping land in MTG.</p>
         <p>Landfall — Whenever a land enters the battlefield under your control, create a 1/1 green Insect creature token. If you control six or more lands, create a token that's a copy of Scute Swarm instead.</p>
-      </div>
+        
+        <hr/>
 
-      <div className="BodyText">
         <div>current land on field</div>
         <NumBox value={currentLands} onChange={adjustCurrentLands}/>
         {/* <div>is land on field 6 or over? disable above box</div> */}
@@ -78,28 +78,29 @@ function App() {
         <NumBox value={landsHittingTheField} onChange={adjustLandsHittingTheField}/>
         <div>go button</div>
         <input type='button' value='CALCULATE!' onClick={calculateHandler}/>
-      </div>
-      <div className="BodyText">
+
+        <hr/>
+
         <div>current scutes</div>
         <NumBox value={initialScutes} onChange={adjustInitialScutes}/>
         <div>new scutes</div>
         <NumBox value={extraScutes} readonly/>
         <div>how many buggies if under 6 land</div>
         <NumBox value={buggers} readonly/>
-      </div>
-      <div className="BodyText">
+
+        <hr/>
+
         <div>Roll new scutes into current scutes. This represents "end of turn" or similiar that will combine the states of the cards.</div>
         <input type='button' value='Next Turn' onClick={nextTurn}/>
         {/* <div>todo: find a way to kill some</div> */}
       </div>
 
-
-
-
       </div>
-      <p>Disclaimer: I own nothing of WOTC or MTG which are big things, please don't take me down.</p>
-      <p>beetle picture is public domain: Photo by <a href="https://unsplash.com/@ziemer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulo Ziemer</a> on <a href="https://unsplash.com/photos/close-up-photo-of-green-oil-bettle-oV3zTK7vuP0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>
-      </p>
+
+
+      <p>Card information can be found at <a href='https://scryfall.com/card/otc/205/scute-swarm'>Scryfall</a>.</p>
+      <p>Disclaimer: I own nothing of WoTC or MTG which are big things, please don't take me down.</p>
+      <p>Beetle picture is public domain: Photo by <a href="https://unsplash.com/@ziemer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulo Ziemer</a> on <a href="https://unsplash.com/photos/close-up-photo-of-green-oil-bettle-oV3zTK7vuP0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.</p>
     </div>
   );
 }

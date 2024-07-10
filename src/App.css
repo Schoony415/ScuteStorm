@@ -10,6 +10,8 @@
   min-height: 100%;
   display: flex;
   flex-direction: column;
+
+  background-color: #eeeeee;
 }
 
 .App-logo {
@@ -50,6 +52,7 @@
 
 .Card {
   width: 75%;
+  max-width: 650px;
   height: 75%;
   border: black solid;
   border-width: .5rem .5rem 2rem .5rem ;
@@ -79,28 +82,38 @@
   
 }
 
-hr {
-  height: 3px;
-  color: black;
-  background-color: #2d714c;
-  width: 75%;
+
+/* .Border */
+h1, .BodyText, .ImageFrame {
+  border: #2d714c 3px solid;
 }
 
-.BodyText {
-  border: #2d714c 3px solid;
-  background: rgba(255,255,255,.5) ;
-  box-shadow: -4px  0px rgba(0,0,0,.5);
+/* .BoxShadow  */
+h1, .BodyText, .ImageFrame {
+  box-shadow: -4px 0px rgba(0,0,0,.5),
+  4px 0px rgba(255,255,255,.5);
 }
 
 h1 {
   text-align: left;
 
-  border: #2d714c 3px solid;
-  margin: 0;
-  Padding: 3px;
+  border-radius: 1rem / 50%;
+  margin: 0 -1rem;
+  Padding: 3px 1rem;
 
   background: #cad4cc;
-  box-shadow: -4px  0px rgba(0,0,0,.5);
+
+  outline: black .5px solid;
+  outline-offset: -3px;
+}
+
+.BodyText {
+  background: rgba(255,255,255,.5);
+}
+
+.ImageFrame {
+  height: 15rem;
+  /* width: 75%; */
 }
 
 .CardPicture {
@@ -108,13 +121,17 @@ h1 {
   width: 100%;
   padding: 0;
   margin: 0;
-
+  border: black 1.5px solid;
 }
 
-.ImageFrame {
-  border: #2d714c 3px solid;
-  height: 15rem;
-  /* width: 75%; */
-  box-shadow: -4px  0px rgba(0,0,0,.5);
+hr {
+  /* height: 1px; */
+  width: 85%;
 
+  /* color: black; */
+  border: solid 1px grey;
+  background-color: grey;
+  /* box-shadow: -1px -1px rgba(0,0,0,1); */
+  box-shadow: 0 0 10px 1px grey;
+  
 }
