@@ -17,28 +17,35 @@ function App() {
 
   // -----
   let currentLandsHandler = (newValue:number) => {
-    if(newValue < 0){return}
+    // at 0 and hit down
+    if(newValue == -1){return}
+    // using -10 to go under
+    if(newValue < 0){setCurrentLands(0); return;}
     setCurrentLands(newValue)
   }
 
   let landsHittingTheFieldHandler = (newValue:number) => {
-    if(newValue < 0){return}
+    if(newValue == -1){return}
+    if(newValue < 0){setLandsHittingTheField(0); return;}
     setLandsHittingTheField(newValue)
   }
 
   // -----
   let initialScutesHandler = (newValue:number)=>{
-    if(newValue < 0){return}
+    if(newValue == -1){return}
+    if(newValue < 0){setInitialScutes(0); return;}
     setInitialScutes(newValue)
   }
 
   let extraScutesHandler = (newValue:number)=>{
-    if(newValue < 0){return}
+    if(newValue == -1){return}
+    if(newValue < 0){setExtraScutes(0); return;}
     setExtraScutes(newValue)
   }
 
   let buggersHandler = (newValue:number)=>{
-    if(newValue < 0){return}
+    if(newValue == -1){return}
+    if(newValue < 0){setBuggers(0); return;}
     setBuggers(newValue)
   }
 
@@ -84,19 +91,19 @@ function App() {
         <hr/>
 
         <div>current land on field</div>
-        <NumBox value={currentLands} onChange={currentLandsHandler}/>
+        <NumBox value={currentLands} onChange={currentLandsHandler} multiplesOfTen/>
         {/* <div>is land on field 6 or over? disable above box</div> */}
         <div>how many land are being added?</div>
-        <NumBox value={landsHittingTheField} onChange={landsHittingTheFieldHandler}/>
+        <NumBox value={landsHittingTheField} onChange={landsHittingTheFieldHandler} multiplesOfTen/>
         <div>go button</div>
         <input type='button' value='CALCULATE!' onClick={calculateHandler}/>
 
         <hr/>
 
         <div>current scutes</div>
-        <NumBox value={initialScutes} onChange={initialScutesHandler}/>
+        <NumBox value={initialScutes} onChange={initialScutesHandler} multiplesOfTen/>
         <div>new scutes</div>
-        <NumBox value={extraScutes} onChange={extraScutesHandler}/>
+        <NumBox value={extraScutes} onChange={extraScutesHandler} multiplesOfTen/>
         <div>1/1 Buggies</div>
         <NumBox value={buggers} onChange={buggersHandler}/>
 

@@ -14,6 +14,7 @@ Please reach out if there are any inaccuracies in the numbers.
 - disallow negative numbers
 - add svg icons
 - subtract scutes and bugs
+- +10 / -10
 
 ## todo list:
 

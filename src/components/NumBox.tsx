@@ -4,12 +4,14 @@ import Circle from './Circle'
 import './NumBox.css'
 
 type NumBoxType = {
-    value: number
-    onChange?: (value: number) => void
-    readonly?: boolean
+    value: number;
+    onChange?: (value: number) => void;
+    readonly?: boolean;
+
+    multiplesOfTen?:boolean;
 }
 
-export default function NumBox({value, onChange, readonly}:NumBoxType){
+export default function NumBox({value, onChange, readonly, multiplesOfTen}:NumBoxType){
     return (<>
         <input type="number"
         value={value} 
@@ -23,5 +25,12 @@ export default function NumBox({value, onChange, readonly}:NumBoxType){
             &nbsp;<Circle onClick={()=>onChange&&onChange(value-1)}>&darr;</Circle>
 
         </>)}
+        {!readonly&&multiplesOfTen&&(<>
+            &nbsp;<Circle onClick={()=>onChange&&onChange(value+10)}>&uarr;10</Circle>
+            &nbsp;<Circle onClick={()=>onChange&&onChange(value-10)}>&darr;10</Circle>
+
+        </>)}
+
+
     </>)
 }
