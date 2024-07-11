@@ -10,10 +10,13 @@ import JIcon from './assets/J.svg'
 function App() {
   const [initialScutes, setInitialScutes] = useState(1);
   const [extraScutes, setExtraScutes] = useState(0);
-  const [buggers, setBuggers] = useState(0)
+  const [buggers, setBuggers] = useState(0);
 
   const [currentLands, setCurrentLands] = useState(3);
-  const [landsHittingTheField, setLandsHittingTheField] = useState(0)
+  const [landsHittingTheField, setLandsHittingTheField] = useState(0);
+
+  const [multipliers, setMultipliers] = useState(1);
+  const [additions, setAdditions] = useState(0);
 
   // -----
   let currentLandsHandler = (newValue:number) => {
@@ -28,6 +31,19 @@ function App() {
     if(newValue == -1){return}
     if(newValue < 0){setLandsHittingTheField(0); return;}
     setLandsHittingTheField(newValue)
+  }
+
+  // -----
+  let multipliersHandler = (newValue:number)=>{
+    if(newValue == -1){return}
+    if(newValue < 0){setMultipliers(0); return;}
+    setMultipliers(newValue)
+  }
+
+  let additionsHandler = (newValue:number)=>{
+    if(newValue == -1){return}
+    if(newValue < 0){setAdditions(0); return;}
+    setAdditions(newValue)
   }
 
   // -----
@@ -57,7 +73,7 @@ function App() {
 
     // console.log("lands:"+currentLands+":"+landsHittingTheField+"="+newTotalLands+";")
 
-    let calculatedScutes = calculateScutesToAdd(scutes, landsHittingTheField, newTotalLands)
+    let calculatedScutes = calculateScutesToAdd(scutes, landsHittingTheField, newTotalLands, {multiplier:multipliers, addition:additions})
 
     setExtraScutes( extraScutes + calculatedScutes.scutesToAdd)
     setBuggers(buggers + calculatedScutes.buggersToAdd)
@@ -97,6 +113,19 @@ function App() {
         <NumBox value={landsHittingTheField} onChange={landsHittingTheFieldHandler} multiplesOfTen/>
         <div>go button</div>
         <input type='button' value='CALCULATE!' onClick={calculateHandler}/>
+
+        <hr/>
+
+        <div>Multipliers:</div>
+        <div><i>"If one or more creature tokens would be created under your control, (two/three/x) times that many of those tokens are created instead."</i></div>
+        <div>note: values of 0 and 1 are ignored</div>
+        <NumBox value={multipliers} onChange={multipliersHandler}/>
+        <div>Additions:</div>
+        <div><i>If you would create a token, create one more</i></div>
+        <NumBox value={additions} onChange={additionsHandler}/>
+        {/* <div>How to stack?</div>
+        <div>-multipliers first- -additions first-</div> */}
+        <div>note: additions are per a land and multipliers are at the end</div>
 
         <hr/>
 

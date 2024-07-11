@@ -15,10 +15,10 @@ Please reach out if there are any inaccuracies in the numbers.
 - add svg icons
 - subtract scutes and bugs
 - +10 / -10
+- add multipliers that other cards might cause
 
 ## todo list:
 
-- add multipliers that other cards might cause
 - make number boxs nicer
 
 ## hosted
