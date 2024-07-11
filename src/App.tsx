@@ -111,8 +111,6 @@ function App() {
         {/* <div>is land on field 6 or over? disable above box</div> */}
         <div>how many land are being added?</div>
         <NumBox value={landsHittingTheField} onChange={landsHittingTheFieldHandler} multiplesOfTen/>
-        <div>go button</div>
-        <input type='button' value='CALCULATE!' onClick={calculateHandler}/>
 
         <hr/>
 
@@ -137,6 +135,9 @@ function App() {
         <NumBox value={buggers} onChange={buggersHandler}/>
 
         <hr/>
+        
+        <div>go button</div>
+        <input type='button' value='CALCULATE!' onClick={calculateHandler}/>
 
         <div>Roll new scutes into current scutes. This represents "end of turn" or similiar that will combine the states of the cards.</div>
         <input type='button' value='Next Turn' onClick={nextTurnHandler}/>
