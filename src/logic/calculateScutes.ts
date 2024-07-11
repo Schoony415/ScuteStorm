@@ -12,8 +12,17 @@ calculateScutesToAdd=(scutesToMathWith, landsETB, totalLands, modifiers)=>{
     for(let i = 0; i<landsETB; i++){
         if(totalLands >= 6){
             ret.scutesToAdd+=scutesToMathWith
+
+            if(modifiers?.addition && modifiers.addition>0){
+                ret.scutesToAdd+= modifiers.addition
+            }        
+
         } else {
-            ret.buggersToAdd+=scutesToMathWith 
+            ret.buggersToAdd+=scutesToMathWith
+
+            if(modifiers?.addition && modifiers.addition>0){
+                ret.buggersToAdd+= modifiers.addition
+            }        
         }
     }
 

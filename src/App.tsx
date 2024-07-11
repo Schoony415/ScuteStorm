@@ -73,7 +73,7 @@ function App() {
 
     // console.log("lands:"+currentLands+":"+landsHittingTheField+"="+newTotalLands+";")
 
-    let calculatedScutes = calculateScutesToAdd(scutes, landsHittingTheField, newTotalLands, {multiplier:multipliers})
+    let calculatedScutes = calculateScutesToAdd(scutes, landsHittingTheField, newTotalLands, {multiplier:multipliers, addition:additions})
 
     setExtraScutes( extraScutes + calculatedScutes.scutesToAdd)
     setBuggers(buggers + calculatedScutes.buggersToAdd)
