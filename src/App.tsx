@@ -125,6 +125,8 @@ function App() {
         <NumBox value={additions} onChange={additionsHandler}/>
         {/* <div>How to stack?</div>
         <div>-multipliers first- -additions first-</div> */}
+        <div>note: additions are per a land and multipliers are at the end</div>
+
         <hr/>
 
         <div>current scutes</div>
