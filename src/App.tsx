@@ -146,10 +146,11 @@ function App() {
 
       </div>
 
-
+      <p>The data is not persistent and a refresh will clear the card out.</p>
       <p>Card information can be found at <a href='https://scryfall.com/card/otc/205/scute-swarm'>Scryfall</a>.</p>
       <p>Disclaimer: I own nothing of WoTC or MTG which are big things, please don't take me down.</p>
       <p>Beetle picture is public domain: Photo by <a href="https://unsplash.com/@ziemer?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Paulo Ziemer</a> on <a href="https://unsplash.com/photos/close-up-photo-of-green-oil-bettle-oV3zTK7vuP0?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>.</p>
+      <p>The <a href="https://github.com/Schoony415/ScuteStorm">repository</a> is open for anyone that can read TypeScript.</p>
     </div>
   );
 }
