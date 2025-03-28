@@ -21,6 +21,11 @@ Please reach out if there are any inaccuracies in the numbers.
 
 - make number boxs nicer
 
+## Bugs
+
+- When going from under to over 7 lands, it skips adding the bugs and only adds the scutes
+  - 3 land, add 4 = should produce 3 bugs 1 scute = actually makes 4 scutes
+
 ## hosted
 
 Using vercel, I have it hosted at:  
